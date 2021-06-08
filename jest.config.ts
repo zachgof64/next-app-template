@@ -6,17 +6,19 @@ const config = {
   },
   clearMocks: true,
   // Don't look for tests in these directories
-  testPathIgnorePatterns: ['./build/', './node_modules/', './.next'],
+  testPathIgnorePatterns: ['./build/', './.yarn', './.next'],
   // Define where to output the coverage report
   coverageDirectory: './coverage',
   // Define what to include in the coverage report
   collectCoverageFrom: [
     // Collect Coverage from:
     '**/*.js',
-    '!**/node_modules/**',
+    '**/*.ts',
+    '!**/.yarn/**',
     '!**/build/**',
     '!**/coverage/**',
     '!**/*.config.js',
+    '!**/*.config.ts'
   ],
   moduleNameMapper: {
     '\\.(scss|css|les)$': 'identity-obj-proxy',
